@@ -1,0 +1,16 @@
+name "raychell-s-quick-bakery"
+description "An arcade game where you have to serve your customers' orders in a very short time."
+authors "Cyrodwd"
+copyright "Copyright © 2024, Cyrodwd"
+license "BSD-2-Clause"
+dependency "raylib-d" version="~>5.0.1"
+
+# raylib-d setup
+libs "raylib"
+lflags "-rpath" "@executable_path/" platform="osx"
+lflags "-L." platform="posix"
+lflags "-rpath=$$ORIGIN" platform="linux"
+
+# Solo por preferencia
+sourcePaths "src/"
+mainSourceFile "src/main.d"
