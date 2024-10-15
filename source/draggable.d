@@ -31,13 +31,14 @@ struct Draggable
 
         if (selected && isReleased(Mouse.left)) {
             actualPosition = ogPosition;
+            cursor.busy = false;
             selected = false;
         }
 
         area.position = actualPosition;
     }
 
-    debug void draw(Color color = white) {
+    void draw(Color color = white) {
         drawRect(area, color);
     }
 }

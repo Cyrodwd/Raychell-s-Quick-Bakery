@@ -16,7 +16,7 @@ struct KCursor
         area = Rect(sprite.position, sprite.size);
 
         busy = false;
-        hidden = false;
+        hidden = hide;
     }
 
     void update(float dt) {
@@ -24,6 +24,11 @@ struct KCursor
         if (sprite.position != mousePos)
         {
             sprite.position = mousePos;
+        }
+
+        version (GAME_DEBUG) {
+            println ( format("Cursor Busy: {}", busy) );
+            println ( format("Cursor Hidden: {}", hidden) );
         }
 
         // Update mouse area position
