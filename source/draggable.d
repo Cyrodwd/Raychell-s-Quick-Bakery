@@ -16,8 +16,8 @@ struct Draggable
         area = Rect(position, Vec2(width, height));
     }
 
-    void update(ref KCursor cursor) {
-        if (!cursor.busy && area.hasIntersection(cursor.area)) {
+    void update(float dt, ref KCursor cursor) {
+        if (area.hasIntersection(cursor.area)) {
             if (isDown(Mouse.left) && !selected) {
                 cursor.busy = true;
                 selected = true;
